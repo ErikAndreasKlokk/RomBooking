@@ -2,3 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+:root {
+    --color-gray-0: #f0f6fc;
+    --color-gray-1: #c9d1d9;
+    --color-gray-2: #b1bac4;
+    --color-gray-3: #8b949e;
+    --color-gray-4: #6e7681;
+    --color-gray-5: #484f58;
+    --color-gray-6: #30363d;
+    --color-gray-7: #21262d;
+    --color-gray-8: #161b22;
+    --color-gray-9: #0d1117;
+    --color-purple-0: #eddeff;
+    --color-purple-1: #e2c5ff;
+    --color-purple-2: #d2a8ff;
+    --color-purple-3: #bc8cff;
+    --color-purple-4: #a371f7;
+    --color-purple-5: #8957e5;
+    --color-purple-6: #6e40c9;
+    --color-purple-7: #553098;
+    --color-purple-8: #3c1e70;
+    --color-purple-9: #271052;
+    --color-pink-0: #ffdaec;
+    --color-pink-1: #ffbedd;
+    --color-pink-2: #ff9bce;
+    --color-pink-3: #f778ba;
+    --color-pink-4: #db61a2;
+    --color-pink-5: #bf4b8a;
+    --color-pink-6: #9e3670;
+    --color-pink-7: #7d2457;
+    --color-pink-8: #5e103e;
+    --color-pink-9: #42062a;
+    --color-blue-0: #cae8ff;
+    --color-blue-1: #a5d6ff;
+    --color-blue-2: #79c0ff;
+    --color-blue-3: #58a6ff;
+    --color-blue-4: #388bfd;
+    --color-blue-5: #1f6feb;
+    --color-blue-6: #1158c7;
+    --color-blue-7: #0d419d;
+    --color-blue-8: #0c2d6b;
+    --color-blue-9: #051d4d;
+    --color-green-0: #aff5b4;
+    --color-green-1: #7ee787;
+    --color-green-2: #56d364;
+    --color-green-3: #3fb950;
+    --color-green-4: #2ea043;
+    --color-green-5: #238636;
+    --color-green-6: #196c2e;
+    --color-green-7: #0f5323;
+    --color-green-8: #033a16;
+    --color-green-9: #04260f;
+}
+
+body {
+    background-color: var(--color-gray-7);
+}
