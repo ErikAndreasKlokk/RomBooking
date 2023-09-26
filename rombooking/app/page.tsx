@@ -3,11 +3,16 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <>
+    <div className="maxwidth">
       <header>
         <div>
           <Link href="">
-            <Image src="/IM logo.png" alt='Logo' width={500} height={500}></Image>
+            <Image 
+              src="/IM logo.png" 
+              alt='Logo' 
+              width={70} 
+              height={70}>
+            </Image>
           </Link>
         </div>
         <div>
@@ -20,5 +25,5 @@ export default function Home() {
       <footer>
 
       </footer>
-    </>
+    </div>
 )}
