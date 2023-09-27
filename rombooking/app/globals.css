@@ -86,3 +86,32 @@ body {
     width: 100%;
     max-width: 1000px;
 }
+
+.headerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-gray-0);
+    font-size: 2rem;
+}
+
+.pxboks {
+    width: 70px;
+    height: 70px;
+}
+
+.klasserom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.klasserom button {
+    border: 1px solid var(--color-gray-6);
+    background-color: var(--color-gray-8);
+    color: var(--color-gray-1);
+    width: 80px;
+    height: 80px;
+    margin: 1rem;
+    padding: 10px;
+}
