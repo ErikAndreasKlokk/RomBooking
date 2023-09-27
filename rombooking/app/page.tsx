@@ -2,7 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
+type props = {
+  klasserom: string;
+  erBooket?: boolean;
+}
 
+function KlasseromButton(props: props) {
+  return (
+    <button>{props.klasserom}</button>
+  )
+}
 
 export default function Home() {
   return (
@@ -21,27 +30,21 @@ export default function Home() {
             Rom Booking IM
           </h1>
           <div className="pxboks">
-
           </div>
         </div>
         <hr />
       </header>
       <main>
         <div className="klasserom">
-          <button>Blå base</button>
-          <button>Esport</button>
-          <button>Lilla base</button>
-          <button>Oransj base</button>
-          <button>Grønn base</button>
-          <button>Amfiet</button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+          <KlasseromButton klasserom='Grønn base'></KlasseromButton>
+          <KlasseromButton klasserom='Blå base'></KlasseromButton>
+          <KlasseromButton klasserom='Lilla base'></KlasseromButton>
+          <KlasseromButton klasserom='Oransje base'></KlasseromButton>
+          <KlasseromButton klasserom='Esport'></KlasseromButton>
         </div>
       </main>
       <footer>
-
+        @Rom Booking IM | 2023
       </footer>
     </div>
 )}
