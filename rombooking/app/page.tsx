@@ -15,12 +15,9 @@ export default function Home() {
             </Image>
           </Link>
         </div>
-        <div>
-
-        </div>
       </header>
       <main>
-
+        
       </main>
       <footer>
 
