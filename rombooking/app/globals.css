@@ -98,9 +98,27 @@ body {
     font-size: 2rem;
 }
 
-.pxboks {
+.logginn {
     width: 70px;
     height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logginn button {
+    background-color: var(--color-gray-8);
+    border: 1px solid var(--color-gray-6);
+    color: var(--color-gray-1);
+    font-size: 0.8rem !important;
+    padding: 7px;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+
+.logginn button:active {
+    scale: 0.9;
+    border-color: var(--color-gray-4);
 }
 
 .klasserom {

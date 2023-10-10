@@ -13,6 +13,16 @@ function KlasseromButton(props: props) {
   )
 }
 
+function LoggInnPopup() {
+  return (
+    <div className="logginnpopupdiv">
+      <div className="logginnpopup">
+
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <div className="maxwidth">
@@ -29,7 +39,8 @@ export default function Home() {
           <h1>
             Rom Booking IM
           </h1>
-          <div className="pxboks">
+          <div className="logginn">
+            <button>Logg inn</button>
           </div>
         </div>
         <hr />
