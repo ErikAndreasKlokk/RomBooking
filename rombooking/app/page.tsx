@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { type } from 'os';
 import React, { useState } from 'react';
 
 type props = {
-  klasserom: string;
+  klasserom?: string;
   erBooket?: boolean;
+  logginn?: boolean;
 }
 
 function KlasseromButton(props: props) {
@@ -17,7 +19,22 @@ function LoggInnPopup() {
   return (
     <div className="logginnpopupdiv">
       <div className="logginnpopup">
-
+        <div className="logginnheader">
+          <p>Login</p>
+          <p>Vær så snill å logg inn for å fortsette.</p>
+        </div>
+        <div className="logginninputs">
+          <p>Email</p>
+          <input type="text" placeholder="noe@noe.noe"/>
+          <p>Password</p>
+          <input type="text" placeholder="passord123"/>
+        </div>
+        <div className="logginnbutton">
+          <button>Logg inn</button>
+        </div>
+        <div className="logginnfooter">
+          <p>Hvis du ikke har konto, signer her.</p>
+        </div>
       </div>
     </div>
   )
@@ -25,6 +42,8 @@ function LoggInnPopup() {
 
 export default function Home() {
   return (
+    <>
+    <LoggInnPopup></LoggInnPopup>
     <div className="maxwidth">
       <header>
         <div className="headerdiv">
@@ -58,4 +77,5 @@ export default function Home() {
         @Rom Booking IM | 2023
       </footer>
     </div>
+    </>
 )}
