@@ -17,10 +17,11 @@ function KlasseromButton(props: props) {
 
 function LoggInnPopup() {
   return (
-    <div className="logginnpopupdiv">
+    <>
+      <div className="logginnpopupdiv"></div>
       <div className="logginnpopup">
         <div className="logginnheader">
-          <p>Login</p>
+          <h1>Login</h1>
           <p>Vær så snill å logg inn for å fortsette.</p>
         </div>
         <div className="logginninputs">
@@ -28,15 +29,15 @@ function LoggInnPopup() {
           <input type="text" placeholder="noe@noe.noe"/>
           <p>Password</p>
           <input type="text" placeholder="passord123"/>
-        </div>
-        <div className="logginnbutton">
+          <div className="logginnbutton">
           <button>Logg inn</button>
+        </div>
         </div>
         <div className="logginnfooter">
           <p>Hvis du ikke har konto, signer her.</p>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
