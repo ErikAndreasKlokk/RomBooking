@@ -2,6 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { type } from 'os';
 import React, { useState } from 'react';
+import { createClient } from "@libsql/client";
+
+const client = createClient({
+  url: "libsql://rombooking-erikandreasklokk.turso.io",
+  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIzLTEwLTE3VDA5OjEzOjUzLjczODc5OTk5NVoiLCJpZCI6ImJkNmVlZmIzLTZjY2MtMTFlZS1hNTNmLWIyMjAyOGFiNjU2NSJ9.dSE_evA_MlrmdHu9T_kZu5V2GZT53ySnZOAinhKUbLJC2jSMt1wV-T9OIikvF_m-Epe5yUNx4Hj51WBTKD8aCw"
+});
 
 type props = {
   klasserom?: string;
@@ -44,7 +50,7 @@ function LoggInnPopup() {
 export default function Home() {
   return (
     <>
-    <LoggInnPopup></LoggInnPopup>
+    {/* <LoggInnPopup></LoggInnPopup> */}
     <div className="maxwidth">
       <header>
         <div className="headerdiv">
