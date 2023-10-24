@@ -3,11 +3,20 @@ import Link from 'next/link';
 import { type } from 'os';
 import React, { useState } from 'react';
 import { createClient } from "@libsql/client";
+import { initializeApp } from "firebase/app";
 
-const client = createClient({
-  url: "libsql://rombooking-erikandreasklokk.turso.io",
-  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIzLTEwLTE3VDA5OjEzOjUzLjczODc5OTk5NVoiLCJpZCI6ImJkNmVlZmIzLTZjY2MtMTFlZS1hNTNmLWIyMjAyOGFiNjU2NSJ9.dSE_evA_MlrmdHu9T_kZu5V2GZT53ySnZOAinhKUbLJC2jSMt1wV-T9OIikvF_m-Epe5yUNx4Hj51WBTKD8aCw"
-});
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAJzovEYZue_vuryyj_SD1dDfpZEDQ-B5o",
+  authDomain: "rombooking-6e184.firebaseapp.com",
+  projectId: "rombooking-6e184",
+  storageBucket: "rombooking-6e184.appspot.com",
+  messagingSenderId: "524540107538",
+  appId: "1:524540107538:web:9170524922897420bd31cb"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 type props = {
   klasserom?: string;
