@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { createClient } from "@libsql/client";
 import { initializeApp } from "firebase/app";
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAJzovEYZue_vuryyj_SD1dDfpZEDQ-B5o",
@@ -30,36 +31,9 @@ function KlasseromButton(props: props) {
   )
 }
 
-function LoggInnPopup() {
-  return (
-    <>
-      <div className="logginnpopupdiv"></div>
-      <div className="logginnpopup">
-        <div className="logginnheader">
-          <h1>Login</h1>
-          <p>Vær så snill å logg inn for å fortsette.</p>
-        </div>
-        <div className="logginninputs">
-          <p>Email</p>
-          <input type="text" placeholder="noe@noe.noe"/>
-          <p>Password</p>
-          <input type="text" placeholder="passord123"/>
-          <div className="logginnbutton">
-          <button>Logg inn</button>
-        </div>
-        </div>
-        <div className="logginnfooter">
-          <p>Hvis du ikke har konto, signer her.</p>
-        </div>
-      </div>
-    </>
-  )
-}
-
 export default function Home() {
   return (
     <>
-    {/* <LoggInnPopup></LoggInnPopup> */}
     <div className="maxwidth">
       <header>
         <div className="headerdiv">
