@@ -5,19 +5,9 @@ import React, { useState } from 'react';
 import { createClient } from "@libsql/client";
 import { AuthContextProvider, UserAuth } from './authPage';
 import LoggInnKnapp from './logInn';
+import KlasseromButton from './klasseromknapp';
 
 
-type props = {
-  klasserom: string;
-  erBooket?: boolean;
-  logginn?: boolean;
-}
-
-function KlasseromButton(props: props) {
-  return (
-    <button>{props.klasserom}</button>
-  )
-}
 
 export default function Home() {
   return (

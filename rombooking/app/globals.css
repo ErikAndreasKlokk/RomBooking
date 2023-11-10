@@ -74,6 +74,9 @@ time, mark, audio, video {
     --color-green-7: #0f5323;
     --color-green-8: #033a16;
     --color-green-9: #04260f;
+
+    --red: #ff000065;
+    --green: #16a085;
 }
 
 body {
@@ -112,7 +115,7 @@ body {
     border: 1px solid var(--color-gray-6);
     color: var(--color-gray-1);
     font-size: 0.8rem !important;
-    padding: 7px;
+    padding: 10px 7px;
     border-radius: 10px;
     transition: all 150ms;
 }
@@ -120,6 +123,44 @@ body {
 .logginn button:active {
     scale: 0.9;
     border-color: var(--color-gray-4);
+}
+
+.loggetinn {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.loggetinn button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--color-gray-8);
+    border: 1px solid var(--color-gray-0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loggetinnImage {
+    border-radius: 50%;
+}
+
+.loading {
+    animation: rotation 0.7s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 .klasserom {
@@ -145,9 +186,113 @@ body {
     border-color: var(--color-gray-4);
 }
 
+.klasserominfoboks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.klasserominfobakgrunn {
+    background-color: var(--color-gray-4);
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.klasserominfo {
+    height: 500px;
+    width: 350px;
+    background-color: var(--color-gray-8);
+    z-index: 1100;
+    opacity: 1;
+    color: var(--color-gray-1);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.klasserominfoheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.klasserominfoheader span {
+    width: 40px;
+}
+
+.klasserominfoheader button {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.klasserominfoheader p {
+    font-size: larger;
+}
+
+.klasseromtilgjengelighet {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-gray-5);
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.klasseromtilgjengelighetdiv1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookklasserom {
+    margin: 0px !important;
+    height: 50px !important;
+    width: 170px !important;
+}
+
+.logginnforåbooke {
+    background-color: var(--color-gray-8);
+    border: 1px solid var(--color-gray-5);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0px !important;
+    height: 50px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booketav {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gray-8);
+    border: 1px solid var(--color-gray-5);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.booketav span {
+    font-size: smaller;
+    font-weight: 300;
+}
+
 footer {
     position: absolute;
     bottom: 10px;
     left: 10px;
     color: var(--color-gray-4);
 }
+
+
