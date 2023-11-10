@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { db } from "./firebase"
 import { UserAuth } from './authPage';
 import KlasseromBooking from "./klasserombooking";
   
@@ -24,8 +23,8 @@ export default function KlasseromButton(props: props) {
                             <button onClick={() => setShowKlasserom(false)}>X</button>
                         </div>
                         <div className="klasserominfomain">
-                            <KlasseromBooking tid="08:15 - 09:00"></KlasseromBooking>
-                            <KlasseromBooking tid="09:00 - 09:45"></KlasseromBooking>
+                            <KlasseromBooking tid="08:15 - 09:00" klasserom={props.klasserom}></KlasseromBooking>
+                            <KlasseromBooking tid="09:00 - 09:45" klasserom={props.klasserom}></KlasseromBooking>
                         </div>
                     </div>
                 </div>
