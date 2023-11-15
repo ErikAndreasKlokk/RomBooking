@@ -5,11 +5,11 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_APIKEY,
-    authDomain: "rombooking-6e184.firebaseapp.com",
-    projectId: "rombooking-6e184",
-    storageBucket: "rombooking-6e184.appspot.com",
-    messagingSenderId: "524540107538",
-    appId: "1:524540107538:web:9170524922897420bd31cb"
+    authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
+    projectId: process.env.NEXT_PUBLIC_PROJECTID,
+    storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+    appId: process.env.NEXT_PUBLIC_APPID
   };
   
   // Initialize Firebase
