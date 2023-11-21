@@ -18,6 +18,8 @@ export default function KlasseromBooking(props: props) {
     const [booketAv, setBooketAv] = useState("")
     const [docData, setDocData] = useState({})
 
+    console.log(user)
+
     const ReadDataFromCloudFirestore = async () => {
         try {
             const userDoc = doc(db, props.klasserom, props.tid)

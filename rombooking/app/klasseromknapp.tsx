@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { UserAuth } from './authPage';
 import KlasseromBooking from "./klasserombooking";
+import { time } from "console";
   
 type props = {
     klasserom: string;
@@ -9,6 +10,14 @@ type props = {
 
 export default function KlasseromButton(props: props) {
     const [showKlasserom, setShowKlasserom] = useState(false)
+
+    const pilHøyre = ">"
+    const pilVenstre = "<"
+    const date = new Date()
+    const dd = date.getDate()
+    const mm = date.getMonth() + 1
+    const yy = date.getFullYear()
+    const fullDate = dd + "." + mm + "." + yy
 
     return (
         <div>
@@ -23,8 +32,19 @@ export default function KlasseromButton(props: props) {
                             <button onClick={() => setShowKlasserom(false)}>X</button>
                         </div>
                         <div className="klasserominfomain">
-                            <KlasseromBooking tid="08:15 - 09:00" klasserom={props.klasserom}></KlasseromBooking>
-                            <KlasseromBooking tid="09:00 - 09:45" klasserom={props.klasserom}></KlasseromBooking>
+                            <div className="datoklasserom">
+                                <button>{pilVenstre}</button>
+                                <p>{fullDate}</p>
+                                <button>{pilHøyre}</button>
+                            </div>
+                            <KlasseromBooking tid="08:15 - 09:00" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="09:00 - 09:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="10:00 - 10:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="10:45 - 11:30" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="12:15 - 13:00" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="13:00 - 13:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="14:00 - 14:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking tid="14:45 - 15:30" klasserom={props.klasserom}/>
                         </div>
                     </div>
                 </div>

@@ -217,6 +217,15 @@ body {
     padding: 10px;
 }
 
+.klasserominfomain {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 91.5%;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
 .klasserominfoheader {
     display: flex;
     justify-content: space-between;
@@ -236,6 +245,27 @@ body {
 .klasserominfoheader p {
     font-size: larger;
     font-weight: 600;
+}
+
+.datoklasserom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.datoklasserom p {
+    font-weight: 500;
+}
+
+.datoklasserom button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0 !important;
+    margin: 5px;
 }
 
 .klasseromtilgjengelighet {
