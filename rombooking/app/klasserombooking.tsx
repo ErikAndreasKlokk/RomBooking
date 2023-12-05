@@ -10,6 +10,7 @@ import { db } from './firebase'
 type props = {
     tid: string;
     klasserom: string;
+    dato: string;
 }
 
 export default function KlasseromBooking(props: props) {

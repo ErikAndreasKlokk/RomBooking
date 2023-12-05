@@ -15,7 +15,7 @@
     "flowbite-datepicker": "^1.2.4",
     "flowbite-react": "^0.7.0",
     "next": "latest",
-    "react": "latest",
+    "react": "^18.2.0",
     "react-dom": "latest"
   },
   "devDependencies": {

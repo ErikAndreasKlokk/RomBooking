@@ -11,6 +11,13 @@ type props = {
 
 export default function KlasseromButton(props: props) {
     const [showKlasserom, setShowKlasserom] = useState(false)
+    const [valgtDato, setValgtdato] = useState("")
+
+    function showValgtdato(value: string) {
+        setValgtdato(value)
+        console.log(valgtDato)
+    }
+
     const date = new Date()
     const dd = date.getDate()
     const mm = date.getMonth() + 1
@@ -31,16 +38,16 @@ export default function KlasseromButton(props: props) {
                         </div>
                         <div className="klasserominfomain">
                             <div className="datoklasserom">
-                                <Datepicker weekStart={2} minDate={date} showClearButton={false} showTodayButton={false} />
+                                <Datepicker id="datepickerId" /* onChange={(e: any) => [showValgtdato(e.target.value)]} */ onSelect={(e: any) => console.log(e.target.value)} language="NO" weekStart={2} minDate={date} showClearButton={false} showTodayButton={false} />
                             </div>
-                            <KlasseromBooking tid="08:15 - 09:00" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="09:00 - 09:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="10:00 - 10:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="10:45 - 11:30" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="12:15 - 13:00" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="13:00 - 13:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="14:00 - 14:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking tid="14:45 - 15:30" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="08:15 - 09:00" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="09:00 - 09:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="10:00 - 10:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="10:45 - 11:30" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="12:15 - 13:00" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="13:00 - 13:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="14:00 - 14:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato="" tid="14:45 - 15:30" klasserom={props.klasserom}/>
                         </div>
                     </div>
                 </div>
