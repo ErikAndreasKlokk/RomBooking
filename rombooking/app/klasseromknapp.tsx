@@ -10,9 +10,6 @@ type props = {
 
 export default function KlasseromButton(props: props) {
     const [showKlasserom, setShowKlasserom] = useState(false)
-
-    const pilHøyre = ">"
-    const pilVenstre = "<"
     const date = new Date()
     const dd = date.getDate()
     const mm = date.getMonth() + 1
@@ -33,9 +30,9 @@ export default function KlasseromButton(props: props) {
                         </div>
                         <div className="klasserominfomain">
                             <div className="datoklasserom">
-                                <button>{pilVenstre}</button>
-                                <p>{fullDate}</p>
-                                <button>{pilHøyre}</button>
+                                <button>&larr;</button>
+                                    
+                                <button>&rarr;</button>
                             </div>
                             <KlasseromBooking tid="08:15 - 09:00" klasserom={props.klasserom}/>
                             <KlasseromBooking tid="09:00 - 09:45" klasserom={props.klasserom}/>

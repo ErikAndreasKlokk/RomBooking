@@ -1,12 +1,8 @@
 "use client";
-import * as firbaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
-import Image from 'next/image';
-import Link from 'next/link';
-import { type } from 'os';
-import React, { useEffect, useState, useContext, createContext, use } from "react";
+import React, { useEffect, useState, useContext, createContext } from "react";
 import { auth } from './firebase';
-import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect, GithubAuthProvider } from 'firebase/auth';
+import { signOut, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect, GithubAuthProvider } from 'firebase/auth';
 
 
 const AuthContext: any = createContext(null)

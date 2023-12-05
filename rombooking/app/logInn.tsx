@@ -56,7 +56,7 @@ export default function LoggInnKnapp() {
             ) : !user ? (
                 <>
                     <div className="logginn">
-                        <button onClick={handleGoogleSignIn}>Logg inn</button>
+                        <button onClick={handleGoogleSignIn}>Logg inn <span>&#x2764;&#xfe0f;</span></button>
                     </div>
                     <div className="logginn">
                         <button onClick={handleGithubSignIn}>Logg inn</button>

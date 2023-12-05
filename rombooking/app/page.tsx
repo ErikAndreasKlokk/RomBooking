@@ -26,7 +26,7 @@ export default function Home() {
           <h1>
             Rom Booking IM
           </h1>
-          <LoggInnKnapp></LoggInnKnapp>
+          <LoggInnKnapp/>
         </div>
         <hr />
       </header>
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </main>
       <footer>
-        @Rom Booking IM | 2023
+        Rom Booking IM<span>&trade;</span> | 2023 <span>&copy;</span>
       </footer>
     </div>
     </>
