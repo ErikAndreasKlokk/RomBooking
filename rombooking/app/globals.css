@@ -169,7 +169,7 @@ body {
     justify-content: center;
 }
 
-.klasserom button {
+.klasserombutton {
     border: 1px solid var(--color-gray-6);
     background-color: var(--color-gray-8);
     color: var(--color-gray-1);
@@ -217,6 +217,15 @@ body {
     padding: 10px;
 }
 
+.exitklasserombutton {
+    background-color: var(--color-gray-8);
+    border: 1px solid var(--color-gray-6);
+    color: var(--color-gray-1);
+    font-size: 0.8rem !important;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+
 .klasserominfomain {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -257,17 +266,6 @@ body {
     font-weight: 500;
 }
 
-.datoklasserom button {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 7px;
-    padding: 0 !important;
-    margin: 5px;
-}
-
 .klasseromtilgjengelighet {
     display: flex;
     flex-direction: column;
@@ -284,6 +282,12 @@ body {
 }
 
 .bookklasserom {
+    border: 1px solid var(--color-gray-6);
+    background-color: var(--color-gray-8);
+    color: var(--color-gray-1);
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 100ms;
     margin: 0px !important;
     height: 50px !important;
     width: 170px !important;

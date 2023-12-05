@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { UserAuth } from './authPage';
 import KlasseromBooking from "./klasserombooking";
 import { time } from "console";
+import { Datepicker } from "flowbite-react";
   
 type props = {
     klasserom: string;
@@ -18,7 +19,7 @@ export default function KlasseromButton(props: props) {
 
     return (
         <div>
-            <button onClick={() => setShowKlasserom(true)}>{props.klasserom}</button>
+            <button className="klasserombutton" onClick={() => setShowKlasserom(true)}>{props.klasserom}</button>
             {showKlasserom ? (
                 <div className="klasserominfoboks">
                     <div className="klasserominfobakgrunn"></div>
@@ -26,13 +27,11 @@ export default function KlasseromButton(props: props) {
                         <div className="klasserominfoheader">
                             <span></span>
                             <p>{props.klasserom}</p>
-                            <button onClick={() => setShowKlasserom(false)}>X</button>
+                            <button className="exitklasserombutton" onClick={() => setShowKlasserom(false)}>X</button>
                         </div>
                         <div className="klasserominfomain">
                             <div className="datoklasserom">
-                                <button>&larr;</button>
-                                    
-                                <button>&rarr;</button>
+                                <Datepicker weekStart={2} minDate={date} showClearButton={false} showTodayButton={false} />
                             </div>
                             <KlasseromBooking tid="08:15 - 09:00" klasserom={props.klasserom}/>
                             <KlasseromBooking tid="09:00 - 09:45" klasserom={props.klasserom}/>

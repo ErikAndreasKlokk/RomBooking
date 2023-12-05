@@ -13,6 +13,7 @@
     "firebase": "^10.5.0",
     "flowbite": "^2.2.0",
     "flowbite-datepicker": "^1.2.4",
+    "flowbite-react": "^0.7.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
@@ -21,7 +22,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "autoprefixer": "latest",
+    "autoprefixer": "^10.4.16",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "postcss": "latest",
