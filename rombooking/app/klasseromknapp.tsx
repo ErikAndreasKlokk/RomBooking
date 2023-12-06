@@ -4,6 +4,7 @@ import { UserAuth } from './authPage';
 import KlasseromBooking from "./klasserombooking";
 import { time } from "console";
 import { Datepicker } from "flowbite-react";
+import { type } from "os";
   
 type props = {
     klasserom: string;
@@ -11,18 +12,23 @@ type props = {
 
 export default function KlasseromButton(props: props) {
     const [showKlasserom, setShowKlasserom] = useState(false)
-    const [valgtDato, setValgtdato] = useState("")
+    const [dato, setDato] = useState(String)
 
-    function showValgtdato(value: string) {
-        setValgtdato(value)
-        console.log(valgtDato)
+    function setTodaysDate() {
+        const dagensDato = new Date()
+        const stringDagensDato = dagensDato.toDateString()
+        setDato(stringDagensDato)
     }
 
+    function showValgtdato(value: Date) {
+        setDato(value.toDateString())
+    }
+
+    useEffect(() => {
+        setTodaysDate()
+    },[showKlasserom])
+
     const date = new Date()
-    const dd = date.getDate()
-    const mm = date.getMonth() + 1
-    const yy = date.getFullYear()
-    const fullDate = dd + "." + mm + "." + yy
 
     return (
         <div>
@@ -38,16 +44,16 @@ export default function KlasseromButton(props: props) {
                         </div>
                         <div className="klasserominfomain">
                             <div className="datoklasserom">
-                                <Datepicker id="datepickerId" /* onChange={(e: any) => [showValgtdato(e.target.value)]} */ onSelect={(e: any) => console.log(e.target.value)} language="NO" weekStart={2} minDate={date} showClearButton={false} showTodayButton={false} />
+                                <Datepicker className=" flex justify-center z-40" id="datepickerId" onSelectedDateChanged={showValgtdato} language="NO" weekStart={2} minDate={date} showClearButton={false} showTodayButton={false} />
                             </div>
-                            <KlasseromBooking dato="" tid="08:15 - 09:00" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="09:00 - 09:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="10:00 - 10:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="10:45 - 11:30" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="12:15 - 13:00" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="13:00 - 13:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="14:00 - 14:45" klasserom={props.klasserom}/>
-                            <KlasseromBooking dato="" tid="14:45 - 15:30" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="08:15 - 09:00" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="09:00 - 09:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="10:00 - 10:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="10:45 - 11:30" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="12:15 - 13:00" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="13:00 - 13:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="14:00 - 14:45" klasserom={props.klasserom}/>
+                            <KlasseromBooking dato={dato} tid="14:45 - 15:30" klasserom={props.klasserom}/>
                         </div>
                     </div>
                 </div>

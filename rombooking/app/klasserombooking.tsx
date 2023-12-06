@@ -19,16 +19,17 @@ export default function KlasseromBooking(props: props) {
     const [booketAv, setBooketAv] = useState("")
     const [docData, setDocData] = useState({})
 
-    console.log(user)
-
     const ReadDataFromCloudFirestore = async () => {
         try {
-            const userDoc = doc(db, props.klasserom, props.tid)
+            const userDoc = doc(db, props.klasserom, props.tid, "datoer", props.dato)
             await getDoc(userDoc).then((doc) => {
                 if (doc.exists()) {
                     setDocData(doc.data())
                     setErBooket(doc.data().erBooket)
                     setBooketAv(doc.data().booketAv)
+                }
+                else {
+                    klasseromUnBooket()
                 }
             })
         } catch (error) {
@@ -39,12 +40,12 @@ export default function KlasseromBooking(props: props) {
 
     useEffect(() => {
         ReadDataFromCloudFirestore()
-    },[])
+    },[props.dato])
  
     const klasseromBooket = async () => {
         ReadDataFromCloudFirestore()
         const colRef = collection(db, props.klasserom)
-        const docRef = doc(colRef, props.tid)
+        const docRef = doc(colRef, props.tid, "datoer", props.dato)
 
         await setDoc(docRef, {
             booketAv: user.displayName,
@@ -57,7 +58,7 @@ export default function KlasseromBooking(props: props) {
     const klasseromUnBooket = async () => {
         ReadDataFromCloudFirestore()
         const colRef = collection(db, props.klasserom)
-        const docRef = doc(colRef, props.tid)
+        const docRef = doc(colRef, props.tid, "datoer", props.dato)
 
         await setDoc(docRef, {
             booketAv: "",
