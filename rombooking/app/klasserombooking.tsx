@@ -18,6 +18,7 @@ export default function KlasseromBooking(props: props) {
     const [erBooket, setErBooket] = useState(false)
     const [booketAv, setBooketAv] = useState("")
     const [docData, setDocData] = useState({})
+    const [githubNotSignedIn, setGithubNotSignedIn] = useState(user?.reloadUserInfo.screenName)
 
     const ReadDataFromCloudFirestore = async () => {
         try {
@@ -27,6 +28,7 @@ export default function KlasseromBooking(props: props) {
                     setDocData(doc.data())
                     setErBooket(doc.data().erBooket)
                     setBooketAv(doc.data().booketAv)
+                    console.log(githubNotSignedIn)
                 }
                 else {
                     klasseromUnBooket()
@@ -40,6 +42,9 @@ export default function KlasseromBooking(props: props) {
 
     useEffect(() => {
         ReadDataFromCloudFirestore()
+        if (user?.reloadUserInfo.screenName == undefined) {
+            setGithubNotSignedIn(user?.displayName)
+        }
     },[props.dato])
  
     const klasseromBooket = async () => {
@@ -48,7 +53,7 @@ export default function KlasseromBooking(props: props) {
         const docRef = doc(colRef, props.tid, "datoer", props.dato)
 
         await setDoc(docRef, {
-            booketAv: user.displayName,
+            booketAv: githubNotSignedIn,
             erBooket: true,
             tid: props.tid,
             klasserom: props.klasserom
@@ -77,7 +82,7 @@ export default function KlasseromBooking(props: props) {
                     <div>
                         {user ? (
                             <div>
-                            {(user.displayName == booketAv) ? (
+                            {(githubNotSignedIn == booketAv) ? (
                                 <button onClick={() => [setErBooket(false), setBooketAv(""), klasseromUnBooket()]} className="bookklasserom">UnBook Klasserom</button>
                             ) : (
                                 <div className="booketav"><span>Booket av:</span> {booketAv}</div>
@@ -90,7 +95,7 @@ export default function KlasseromBooking(props: props) {
                 ) : (
                     <div>
                         {user ? (
-                            <button onClick={() => [setErBooket(true), setBooketAv(user.displayName), klasseromBooket()]} className="bookklasserom">Book Klasserom</button>
+                            <button onClick={() => [setErBooket(true), setBooketAv(githubNotSignedIn), klasseromBooket()]} className="bookklasserom">Book Klasserom</button>
                         ) : (
                             <div className="logginnforåbooke">
                                 <p>Logg inn for å booke</p>

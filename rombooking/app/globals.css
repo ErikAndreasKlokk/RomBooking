@@ -102,22 +102,79 @@ body {
     font-size: 2rem;
 }
 
-.logginn {
+.logginnKnapp {
+    background-color: var(--color-gray-8);
+    border: 1px solid var(--color-gray-6);
+    color: var(--color-gray-1);
+    font-size: 0.8rem !important;
+    border-radius: 10px;
+    transition: all 150ms;
     width: 70px;
-    height: 70px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.logginnKnapp:active {
+    scale: 0.9;
+    border-color: var(--color-gray-4);
+}
+
+.logginnBoks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.logginnPopup {
+    display: flex;
+    height: 180px;
+    width: 250px;
+    background-color: var(--color-gray-8);
+    z-index: 1100;
+    opacity: 1;
+    color: var(--color-gray-1);
+    border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.logginn {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logginnExit {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px 10px;
+}
+.logginnExit:active {
+    scale: 0.9;
+    border-color: var(--color-gray-4);
+}
+
 .logginn button {
     background-color: var(--color-gray-8);
-    border: 1px solid var(--color-gray-6);
+    border: 2px solid var(--color-gray-4);
     color: var(--color-gray-1);
     font-size: 0.8rem !important;
-    padding: 10px 7px;
-    border-radius: 10px;
+    border-radius: 50%;
     transition: all 150ms;
+    height: 100%;
+    width: 100%;
 }
 
 .logginn button:active {
@@ -154,6 +211,14 @@ body {
     animation: rotation 0.7s infinite linear;
 }
 
+.loadingDiv {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -167,18 +232,26 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .klasserombutton {
-    border: 1px solid var(--color-gray-6);
+    border: 2px solid var(--color-gray-5);
     background-color: var(--color-gray-8);
     color: var(--color-gray-1);
-    width: 80px;
-    height: 80px;
+    width: 250px;
+    height: 250px;
     margin: 1rem;
     padding: 10px;
     border-radius: 15px;
-    transition: all 100ms;
+    transition: all 150ms;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.klasserombutton:hover {
+    font-size: xx-large;
+    border-color: var(--color-gray-4);
 }
 
 .klasserom button:active {
@@ -324,10 +397,11 @@ body {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     left: 10px;
     color: var(--color-gray-4);
+
 }
 
 

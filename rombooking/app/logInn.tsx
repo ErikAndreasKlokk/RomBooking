@@ -7,6 +7,7 @@ export default function LoggInnKnapp() {
 
     const { user, GoogleSignIn, GithubSignIn, LogOut}: any = UserAuth()
     const [loading, setLoading] = useState(true)
+    const [loginnPopup, setloginnPopup] = useState(false)
 
     const handleGoogleSignIn = async () => {
         try {
@@ -44,23 +45,35 @@ export default function LoggInnKnapp() {
     return(
         <div>
             {loading ? (
-                <div className="logginn">
+                <div className="loadingDiv">
                     <Image className="loading"
                         src={"/refresh.svg"}
                         alt='loading'
                         height={30}
-                        width={30}
+                        width={30}  
                         >
                     </Image>
                 </div>
             ) : !user ? (
                 <>
-                    <div className="logginn">
-                        <button onClick={handleGoogleSignIn}>Logg inn <span>&#x2764;&#xfe0f;</span></button>
-                    </div>
-                    <div className="logginn">
-                        <button onClick={handleGithubSignIn}>Logg inn</button>
-                    </div>
+                    <button onClick={() => setloginnPopup(true)} className="logginnKnapp">Logg inn</button>
+                    {loginnPopup ? (
+                        <div className="logginnBoks">
+                            <div className="klasserominfobakgrunn"></div>
+                            <div className="logginnPopup">
+                            <button className="exitklasserombutton logginnExit" onClick={() => setloginnPopup(false)}>X</button>
+                                <div className="logginn">
+                                    <button onClick={handleGoogleSignIn}>Google</button>
+                                </div>
+                                <div className="logginn">
+                                    <button onClick={handleGithubSignIn}>Github</button>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        null
+                    )
+                    }
                 </>
                 ) 
                 : 
