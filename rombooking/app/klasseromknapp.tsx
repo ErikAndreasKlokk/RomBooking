@@ -37,7 +37,7 @@ export default function KlasseromButton(props: props) {
                 <div className="klasserominfoboks">
                     <div className="klasserominfobakgrunn"></div>
                     <div className="klasserominfo">
-                        <div className="klasserominfoheader">
+                        <div className="klasserominfoheader"> 
                             <span></span>
                             <p>{props.klasserom}</p>
                             <button className="exitklasserombutton" onClick={() => setShowKlasserom(false)}>X</button>
